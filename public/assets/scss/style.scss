@@ -1,0 +1,393 @@
+// Bootstrap overdies varibles File
+@import "helpers/variable";
+
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../../../node_modules/boxicons/css/boxicons.min.css";
+
+// Google Fonts
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Noto+Sans:wght@400;700&display=swap";
+
+// Custom Files
+@import "helpers/import.scss";
+@import "component/_all";
+
+html, body {
+    height: auto !important;
+}
+
+body{
+    background: $body-bg;
+    font-family: $font-family-base;
+    font-size: $font-size-base;  
+    line-height:$line-height-base;
+    color: $body-color;
+    font-weight: $font-regular;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // background: url(#{$assetPath}/confirm-cancel.jpg);
+    //ToDo: below code for demo
+    // background:$primary;
+    // @include media(up, $breakpoint-xl) {
+    //     background: $white;
+    // }
+}
+
+.main-layout {
+    min-height: calc(100vh - 128px);
+    @include media(down, $breakpoint-md) {
+        min-height: calc(100vh - 151px);
+    }
+}
+
+// Begin: Links
+ a {
+    text-decoration:$link-decoration;
+    color: $link-color;
+    cursor: pointer;
+    outline: 0;
+    &:hover, &:focus{
+        text-decoration:$link-decoration;
+        outline:0;
+        color:$link-hover-color; 
+    }
+}
+.text-link{
+    color:$primary; 
+    position: relative;
+    &:after{
+        display: block;
+        content: '';
+        position: absolute;
+        top: 1rem;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        @include css3-prefix(transition, width 0.3s ease);
+    }
+    &:hover{
+        color:$primary;
+        &:after{ 
+            width: 100%;
+            border-bottom: 1px solid $primary; 
+            opacity: 0.8;
+        }
+    }    
+}
+// Begin: helper Classe
+p {
+    margin-top:0;
+    margin-bottom:$paragraph-margin-bottom;
+}
+img{
+   max-width: 100%;
+}
+
+// Layout
+body, html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+// Custom Scroll with CSS only Supported Browser Chrome, Safari and Firefox
+*{
+    scrollbar-color: rgba($black,0.3) transparent;
+    scrollbar-width: thin;
+ }
+ ::-webkit-scrollbar-track {
+    box-shadow: none;  
+    -webkit-box-shadow: none;
+    background-color: transparent;
+}
+::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba($black,0.3);
+}
+
+.my-spinner {
+    width: 40px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+  
+.my-renderer {
+    margin-left: 20px;
+}
+
+.bx-ul {
+    .bx {
+        position: relative;
+        width: auto;
+    }
+}
+
+.rangeslider-horizontal, .rangeslider-vertical {
+    .rangeslider__fill {
+        background-color: $primary;
+    }
+}
+
+.tab-content {
+    padding: size(16) 0;
+}
+
+.datepicker {
+    position: relative;
+    .bx {
+        position: absolute;
+        right: size(10);
+        top: size(11);
+        font-size: size(20);
+        color: $primary;
+        pointer-events: none;
+    }
+}
+
+
+// slider
+
+.arrow-left {
+    opacity: 0;
+    display:none !important;
+ /*    pointer-events: none !important;*/
+  }
+  .show-left-arrow,
+  .show-right-arrow {
+    opacity: 1;
+    display: block !important;
+     /*pointer-events: all !important;*/
+  }
+  .hide-left-arrow,
+  .hide-right-arrow {
+    opacity: 0;
+    display: none !important;
+   /* pointer-events: none !important;*/
+  }
+  
+  
+  
+  .slider-wrapper {
+    width: 100%;
+  
+    margin: 0 auto;
+    height: auto;
+  
+    padding: 0;
+  
+    overflow: auto;
+  /*  border: 1px solid #333;*/
+  /*  cursor: pointer;*/
+   /* transition: all ease 0.5s;*/
+  }
+  
+  /*.slider-wrapper,.slider-inner{
+    float: left;
+  }*/
+  .slider-container {
+      transition: all ease 0.5s;
+      max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important; 
+      position: relative;
+     
+  }
+  
+  .slider-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .slider-wrapper{
+    scrollbar-width: none;
+  }
+
+  /*.landing-inner-content {
+    background: #fff;
+    height: 280px;
+  }*/
+  .slider-boxes-inner {
+    border-radius: 20px;
+    border: 1px solid #dfdfdf;
+    overflow: hidden;
+}
+.slider-boxes-inner .slider-box-details {
+    padding: 10px 15px;
+}
+  .slider-boxes {
+    float: left;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+.special-car .ctm-pdng{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.special-car .slider-boxes {
+   padding: 0;
+
+}
+.page-template-listing-page .drive-now.exotic-car .special-car .slider-boxes{
+    width: 100%;
+}
+
+
+.slider-action-btn.action-next {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: gray;
+}
+.slider-action-btn.action-next {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: gray;
+}
+.slider-action-btn.action-prev{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: gray;
+}
+.slider-box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  .slider-overflow-auto {
+    overflow: auto !important;
+    margin-left: -10px;
+    width: auto;
+  }
+  .slider-overflow-visible{
+    overflow: visible !important;
+  }
+  
+
+  
+  /*.slider-main{
+    position: relative;
+  }*/
+  .arrow-main {
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+    margin: auto;
+    
+    left: 0;
+    right: 0;
+    pointer-events: all;
+    
+}
+.drive-now .arrow-main>button {
+    top: 35%;
+    position: absolute;
+}
+/*.drive-now .arrow-main>button {
+    top: 50%;
+    position: absolute;
+    transform: translatey(-50%);
+}*/
+.arrow-left {
+    left: 20px;
+}
+.arrow-right{
+    right: 20px;
+}
+
+.container {
+    max-width: 100%;
+}
+
+
+.box-content {
+    height: 200px;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: none;
+    background: #2e5266;
+    background: linear-gradient(to top, #2e5266, #6e8898);
+    transition: 1s;
+    margin: 18px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+  }
+  .box-content:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: -5rem;
+    filter: blur(4px);
+  }
+
+  .box-content {
+    height: 100%;
+    display: flex;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: none;
+    background: #2e5266;
+    background: -webkit-gradient(linear, left bottom, left top, from(#2e5266), to(#6e8898));
+    background: -webkit-linear-gradient(bottom, #2e5266, #6e8898);
+    background: -moz-linear-gradient(bottom, #2e5266, #6e8898);
+    background: linear-gradient(to top, #2e5266, #6e8898);
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+    margin: 18px;
+    border-radius: 10px;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+    font-size: 35px;
+    left: 0;
+    margin: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.slider-boxes-inner{
+    position:relative;
+}
+.slider-box-img {
+    padding-bottom: 60%;
+    position: relative;
+}
+.slider-box-img img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}

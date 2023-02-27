@@ -1,0 +1,11 @@
+.site-footer {
+    background: $white;
+    box-shadow: $box-shadow-sm-reverse;
+    padding: 20px 0;
+}
+
+.footer-text {
+    @include media(down, $breakpoint-md) {
+        display: block !important;
+    }
+}
